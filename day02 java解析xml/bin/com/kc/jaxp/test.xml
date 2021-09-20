@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><people xmlns="http://www.example.org/test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/test test.xsd">
+	<teacher>
+		<name>一个</name>
+		<age>23</age>
+		<salary>10000.00</salary>
+		<address>不知道</address>
+	</teacher>
+	<student>
+		<name>一一</name>
+		<age>3</age>
+		<numberid>12</numberid>
+		<course>javaee</course>
+		<course>jsp</course>
+		<course>javase</course>
+	</student>
+	<student>
+		<name>er号</name>
+		<age>20</age>
+		<numberid>0112</numberid>
+		<course>C</course>
+		<course>Python</course>
+		<course>c++</course>
+	</student>
+
+<备注>天天学习，好好向上！！！</备注></people>

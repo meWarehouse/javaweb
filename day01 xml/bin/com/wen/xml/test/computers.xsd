@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.example.org/computers" 
+		xmlns:tns="http://www.example.org/computers" 
+			xmlns:mem="http://www.example.org/memory"
+				elementFormDefault="qualified">
+				
+<element name="computers">
+	<complexType>
+		<sequence>
+			<element name="computer" type="tns:computerType"/>
+		</sequence>
+	</complexType>
+</element>
+	<complexType name="computerType">
+		<all>
+			<element name="memories">
+				<complexType>
+					<sequence>
+						<element name="memory" minOccurs="1" maxOccurs="2"></element>
+					</sequence>
+				</complexType>
+			</element>	
+		</all>
+	</complexType>
+	
+</schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 文档声明 -->
+<?xml-stylesheet type="text/css" href="demo.css" ?>
+<zong><!-- 有且仅有一个根标签 -->
+	<a>
+		<a1>成为uiV人s</a1>
+		<a2>一个a2标签</a2>
+		<a3>自定义a3标签</a3>
+		<b1/>
+	</a>
+	<city name="cs"><!-- 属性值一定要加引号 -->
+		<c1 name='zj'>珠江三角洲</c1>
+		<c1>
+			<name>cj</name><!-- 标签属性代表的信息可以改用子元素的形式描述 -->
+			长江三角洲
+		</c1>
+	</city>
+</zong>

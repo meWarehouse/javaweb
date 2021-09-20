@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people orderid="10001">
+	<teacher id="01">
+		<name ids="000">yige</name>
+		<sex>nv</sex>
+		<pppp idc="009">scdvfvcdsf</pppp>
+		<pppp idc="009">scdvfvcdsf</pppp>
+	</teacher>
+	<teacher id="01">
+		<name ids="000">yige</name>
+		<sex>nv</sex>
+		<pppp idc="009">scdvfvcdsf</pppp>
+		<kc>javaSE</kc>
+		<创建>xdcfvgydvudi</创建>
+		<pppp idc="009">scdvfvcdsf</pppp>
+	</teacher>
+	<student id="student01" name="attrName">
+		<name>aa</name>
+		<创建>xdcfvgydvudi</创建>
+		<创建>xdcfv</创建>
+		<kc>javaSE</kc>
+		<创建>xdcfvgydvudi</创建>
+	</student>
+	<aa>aaaaa</aa>
+</people>

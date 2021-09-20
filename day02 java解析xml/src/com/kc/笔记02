@@ -1,0 +1,172 @@
+笔记02
+
+jaxp
+
+	DOM Dom4j Sax
+	
+	
+	
+	DOM	(将内容全部解析)
+		类 DocumentBuilderFactory
+			1.获取工厂类对象
+				public static DocumentBuilderFactory newInstance()	获取 DocumentBuilderFactory 的新实例
+				
+			2.使用工厂产生解析器 
+				public abstract DocumentBuilder newDocumentBuilder()	使用当前配置的参数创建一个新的 DocumentBuilder 实例 返回：新的 DocumentBuilder 实例
+	
+			3.通过解析器解析xml文件
+				public Document parse(File f) 返回一个新的 DOM Document 对象  	传入xml文件
+		通过1、2、3部获取到Document接口(改接口表示整个 HTML 或 XML 文档)
+			
+			相关操作：
+				获取节点：
+					NodeList getElementsByTagName(String tagname)
+						tagname - 要匹配的标记的名称。特殊值 "*" 匹配所有标记
+				创建节点：
+					Element createElement(String tagName)
+					
+				Node item(int index) index - 集合中的索引
+				
+				节点
+					Node：所有节点的父节点
+						String getTextContent()
+							获取节点内容
+						void setTextContent(String textContent)
+							设置节点内容
+						Node appendChild(Node newChild)
+							将节点 newChild 添加到此节点的子节点列表的末尾。如果 newChild 已经存在于树中，则首先移除它
+						Node removeChild(Node oldChild)
+							从子节点列表中移除 oldChild 所指示的子节点，并将其返回
+						Node insertBefore(Node newChild, Node refChild)
+							在现有子节点 refChild 之前插入节点 newChild
+							
+					Element节点
+						String getAttribute(String name) 
+							通过名称获得属性值
+						void setAttribute(String name, String value)
+							name - 要创建或更改的属性名称。
+							value - 以字符串形式设置的值
+							如果属性名已存在则会更改,没如果不存在则创建
+						void removeAttribute(String name)
+							通过名称移除一个属性
+							
+				将内容写入文档
+					创建TransformerFactory实列
+						public static TransformerFactory newInstance()
+					通过TransformerFactory实列创建Transformer
+						Transformer可以通过 TransformerFactory.newTransformer 方法获取此类的实例
+					然后调用transform的方法
+						public abstract void transform(Source xmlSource,Result outputTarget)
+							将Source源数据写入Result目地数据中
+								xmlSource - 要转换的 XML 输入
+								outputTarget - 转换 xmlSource 的 Result
+					源：Source xmlSource = new DOMSource(node);
+					目的：Result result = new StreamResult(File f);
+						
+	Sax (读取到哪解析那)
+		SAXParserFactory
+			1.获取工厂对象
+				public static SAXParserFactory newInstance()	获取 SAXParserFactory 的一个新实例
+			2.通过工厂创造解析器对象
+				public abstract SAXParser newSAXParser()	使用当前配置的工厂参数创建 SAXParser 的一个新实例
+			3.通过解析器获取阅读器对象
+				public abstract XMLReader getXMLReader()	
+			4.允许应用程序注册内容事件处理程序
+				void setContentHandler(ContentHandler handler)	
+					handler - 内容处理程序	
+					ContentHandler 事件处理器 解析器在解析某一部分的文件时，只要解析到某一部分内容就会自动调用事件处理器处理数据
+					
+					public interface ContentHandler	接收文档逻辑内容的通知
+						1.接收元素开始的通知
+							void startElement(String uri,String localName, String qName, Attributes atts)
+								uri - 名称空间 URI，如果元素没有名称空间 URI，或者未执行名称空间处理，则为空字符串
+								localName - 本地名称（不带前缀），如果未执行名称空间处理，则为空字符串
+								qName - 限定名（带有前缀），如果限定名不可用，则为空字符串
+								atts - 连接到元素上的属性。如果没有属性，则它将是空 Attributes 对象。在 startElement 返回后，此对象的值是未定义的  
+						
+						2.接收字符数据的通知
+							void characters(char[] ch, int start, int length)
+								ch - 来自 XML 文档的字符
+								start - 数组中的开始位置
+								length - 从数组中读取的字符的个数 
+								
+						3.接收元素结束的通知
+							void endElement(String uri, String localName,String qName)
+								uri - 名称空间 URI，如果元素没有名称空间 URI，或者未执行名称空间处理，则为空字符串
+								localName - 本地名称（不带前缀），如果未执行名称空间处理，则为空字符串
+								qName - 限定的 XML 名称（带前缀），如果限定名不可用，则为空字符串 
+								
+			5.void parse(InputSource input)解析 XML 文档	
+				input - XML 文档的顶层的输入源			
+	
+	
+	Dom4j
+		1.创建SAXReader对象
+			SAXReader reader = new SAXReader();
+		2.通过SAXReader对象读取xml文件并返回Document接节点
+			Document document = reader.read(File file);	
+				file -xml文件路径 
+	
+		获取节点：
+			获取根节点：
+				Element root = document.getRootElement()
+			通过根节点获取其他节点
+				root.element(指定节点)
+		
+		节点内容：
+			getText()
+			setText()
+		
+		节点属性：
+			attribute(节点名).getValue()
+				
+		创建节点
+			Element element = DocumentHelper.createElement("需要创建节点的节点名")	
+				
+			给节点添加内容 ： element.setText("需要添加的内容")
+	
+		添加节点
+			父.add(子)
+		删除节点
+			父.remove(子)
+	
+		写入文件
+			XMLWriter w = new XMLWriter(new FileOutputStream(xml文件));
+			w.write(document)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+

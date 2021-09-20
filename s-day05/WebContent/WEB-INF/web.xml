@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0" metadata-complete="true">
+
+
+	<!-- 
+		需求：
+			在web.xml文件中设两个WEB应用参数，user，password
+			定义一个login.html，里面定义连个请求字段：user，password，发送到loginServlet
+			再创建一个LoginServlet,在其中获取请求的user，password，对比和web.xml文件中定义的请求参数是否一致
+			若一致，响应Hello:xxx,若不响应Sorry:xxx  xxx为user
+	 -->
+	 
+	 <context-param>
+	 	<param-name>user</param-name>
+	 	<param-value>yige</param-value>
+	 </context-param>
+	 <context-param>
+	 	<param-name>password</param-name>
+	 	<param-value>yige123</param-value>
+	 </context-param>
+
+	<context-param>
+		<param-name>Driver</param-name>
+		<param-value>oracle.jdbc.driver</param-value>
+	</context-param>
+	<context-param>
+		<param-name>Oracle</param-name>
+		<param-value>jdbc:oracle:thin:@127.0.0.1:1521:orcl</param-value>
+	</context-param>
+	
+	
+
+	<servlet>
+		<servlet-name>test1</servlet-name>
+		<servlet-class>com.kc.test.Test1</servlet-class>
+		
+		<init-param>
+			<param-name>test1</param-name>
+			<param-value>这是一个test1的测试</param-value>
+		</init-param>
+		<init-param>
+			<param-name>TEST1</param-name>
+			<param-value>这也是一个TEST1的测试</param-value>
+		</init-param>
+		
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>test1</servlet-name>
+		<url-pattern>/test1</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>helloServlet</servlet-name>
+		<servlet-class>com.kc.test.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>helloServlet</servlet-name>
+		<url-pattern>/helloServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<!--  <servlet-class>com.kc.servlet.LoginServlet</servlet-class>-->
+		<servlet-class>com.kc.servlet.LoginServlet3</servlet-class>
+		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/loginServlet</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

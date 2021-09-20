@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animal orderid="animal000" xmlns="http://www.example.org/sax"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/sax sax.xsd">
+	<tiger id="001">
+		<name>老虎</name>
+		<sex>male</sex>
+		<age>12</age>
+		<from>非洲</from>
+		<feature>吃肉</feature>
+	</tiger>
+	<panda>
+		<name>熊猫</name>
+		<sex>male</sex>
+		<age>1</age>
+		<from>中国</from>
+		<feature>卖萌</feature>
+	</panda>
+	<dog id="003">
+		<name>哈士奇</name>
+		<sex>femal</sex>
+		<age>3</age>
+		<from>美国</from>
+		<feature>看门</feature>
+	</dog>
+
+</animal>

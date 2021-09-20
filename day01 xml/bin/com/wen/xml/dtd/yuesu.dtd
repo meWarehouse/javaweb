@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT scores (student*)>
+<!ELEMENT student (name,course,score)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT course (#PCDATA)>
+<!ATTLIST student id CDATA #REQUIRED>

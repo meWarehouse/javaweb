@@ -1,0 +1,145 @@
+笔记 07
+
+
+
+	page 指令
+		1.import
+			格式：<%@page import="需要导入的包名，与java导包类似" %>
+			
+		2.session
+			格式：<%@page session="true(默认)/false" %>
+				指定当前页面的session对象是否可用（或者当前页面是否一定要商城HttpSession对象）
+				
+		3.isELIgnored
+			指定当前页面是否忽略使用EL表达式（默认为false）
+			
+		4.errorPage 与	isErrorPage
+			4.1：errorPage/isErrorPage
+				在响应指定错误实际响应页面时，JSP是使用请求转发的模式
+				errorPage: 在可能出错的jsp页面定义， 其中 / 表示当前WEB 应用的根目录
+					<%@page errorPage="/指定当前页面出现错误的实际响应页面地址" %>
+				isErrorPage: 定义在错误响应页面，该页面为错误处理方式
+					<%@page isErrorPage="true" %>
+				
+				一般不建议，使客户能够直接访问到该页面
+					所以可以将这个错误响应处理页面放在WEB-INF文件夹下
+				
+			4.2：在web.xml中配置错误页面
+				<error-page>
+					<error-code>指定错误代码 404没有指定资源，500内部错误</error-code>
+					<location>指定响应地址</location>
+				</error-page>
+				<error-page>
+					<exception-type>指定异常的类型</exception-type>
+					<location>指定响应地址</location>
+				</error-page>
+				
+		5.contentType：指定当前Jsp页面响应的类型 实际上是调用 response.setContentType("可以指定文件格式"; charset=UTF-8");
+			文件格式要求：apache-tomcat-7.0.100-windows-x64\apache-tomcat-7.0.100\conf\web.xml
+						
+		6.pageEncoding:指定当前JSP页面的字符编码，通常情况下和contentType中的charset一致
+
+	include 指令
+		指令用于JSP引擎字啊翻译当前JSP页面时将其他文件中的内容合并进当前JSP页面转换成的Servlet源文件中，
+		这种在源文件级别进行引入的方式称为静态引入，当前JSP页面与静态引入的页面紧密结合为一个Servlet
+
+		<%@ include file="包含的文件地址" %>
+			file 属性的设置值必须是使用相对路径
+			如果以 / 开头，表示相对于当前WEB应用程序的根目录(注意不是站点根目录)，否则相对于当前文件
+				程序根目录：dayxxx
+				站点目录：8080
+	taglib 指令
+	JSP标签
+	
+		jsp:include
+		
+			<jsp:include page="b.jsp"></jsp:include>
+			
+			动态引入：并不像include指令生成一个Servlet文件，而是生成两个servlet文件，然后通过一个方法的方式将目标页面包含进来
+				       方法：org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "b.jsp", out, false);
+			
+	
+				include 指令  yu jsp:include标签区别：.....................
+		
+		jsp:forword
+			1.
+				<jsp:forward page="地址">
+					<jsp:param value="参数值" name="参数名"/>
+				</jsp:forward>
+				相当于
+				<% request.getRequestDispatcher("地址").forward(request, response);%>
+			2.但使用jsp:forword可以使用jsp:param子标签向 b.jsp 传入一些参数，同一js:include 也可以使用jsp:param子标签
+
+		
+	中文乱码：
+		关于中文乱码
+			在jsp页面中 请求页面或不出现乱码：
+				1.三个一致
+					保证：contentType="text/html; charset=UTF-8"
+						pageEncoding="UTF-8"
+						charset 和 pageEncoding 的编码一致，且都支持中问
+						还需保证浏览器的显示的字符编码也和请求的JSP页面的编码一致
+				2.获取中文参数值：默认在传输过程中使用的编码为 ISO-8859-1
+					对于post请求：只需在请求之前调用 request.setCharacterEncoding("UTF-8") 即可解决
+					GET请求：上面的方法对get请求无效
+						解决方案：
+							配置：apache-tomcat-7.0.100-windows-x64\apache-tomcat-7.0.100\conf\service.xml文件下的
+ 								<Connector port="8080" protocol="HTTP/1.1"
+						               connectionTimeout="20000"
+						               redirectPort="8443" 
+									   useBodyEncodingForURI="true"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

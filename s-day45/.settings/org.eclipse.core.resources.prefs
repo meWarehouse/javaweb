@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/atguigu/bookstore/dao/AccountDAO.java=GBK
+encoding//src/com/atguigu/bookstore/dao/BookDAO.java=GBK
+encoding//src/com/atguigu/bookstore/dao/Dao.java=GBK
+encoding//src/com/atguigu/bookstore/dao/TradeDAO.java=GBK
+encoding//src/com/atguigu/bookstore/dao/TradeItemDAO.java=GBK
+encoding//src/com/atguigu/bookstore/db/JDBCUtils.java=GBK
+encoding//src/com/atguigu/bookstore/utils/ReflectionUtils.java=gb2312
+encoding/<project>=GBK
+encoding/bookstore.sql=UTF-8
+encoding/note.txt=GBK

@@ -1,0 +1,112 @@
+
+笔记01
+
+
+xml笔记
+
+
+
+
+	XML
+    在xml语言中允许用户自定义标签，一个标签用于描述一段数据，一个标签可以分为开始标签和结束标签，
+    在开始标签和结束标签之间又可以定义其他标签以此来实现数据之间的关系
+
+XML语法
+    1.文档声明
+	<?xml version="1.0" encoding="编码集"?>
+    2.元素
+	2.1：标签分为开始标签和结束标签，一个标签有很多种书写形式
+	2.2：标签之间不可以交叉嵌套
+	2.3：格式良好的xml文件必须有且仅有一个根标签，其他标签都是这个标签的子孙标签
+	2.4：命名规范
+		a.区分大小写
+		b.不能一数字或_开头
+		c.不能以xml开头
+		d.不能包含空格
+    3.属性
+	3.1：一个标签可以有多个属性，每个属性都有自己的名称和取值
+	3.2：属性值一定要加引号
+	3.3：定义属性时也要遵循命名规范
+	3.4：标签属性代表的信息可以改用子元素的形式描述
+    4.注释
+	<!-- -->
+    5.CDATE区，特殊字符
+	在书写xml文件时，对于不想让解析器执行而当做原始内容处理
+	语法：
+	       <![CDATA[内容]]>
+    6.处理指令
+    
+    
+	<?xml-stylesheet type="text/css" href="文件名.css" ?> 引入外部css样式
+	数量词
+		+ 至少一次
+		？0或1
+		* 任意次数
+	
+xml约束 
+	含义：在xml中编写一个文件用来约束另一个xml的书写规范
+	常用约束：
+		1.XML DTD:文档类型定义
+			内部文档声明
+				声明内部dtd
+					<!DOCTYPE 根元素 [元素声明]>
+					元素：<!ELEMENT 元素名称 类别> 
+					元素属性：<!ATTLIST 元素名称 属性名称 属性类型 默认值>
+					CDATA 字符串数据
+					#REQUIRED 必须的
+					#IMPLIED  非必需的
+					空元素：<!ELEMENT 元素名称 EMPTY>
+					元素类型#PCDATA不能有标签
+			外部文档声明
+				引入外部xml约束文件：<!DOCTYPE 根元素 SYSTEM "文件名">
+			<!DOCTYPE score SYSTEM "scores.dtd">
+			<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis-3-config.dtd">
+	
+	
+	
+	
+	XML Schema
+		名称空间	
+		
+		
+	<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<xxx xmlns="名称空间" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="名称空间	xsd文件路径">	
+			
+			
+	对xml文件解析
+		1.DOM(document object model)
+			优点：
+				在内存中会将xml文件全部解析成对象，实现增删改查非常方便，操作速度快
+			缺点：
+				如果文件较大，对内存消耗较大，容易内存溢出，所以dom不适合对大的xml进行操作
+		2.SAX(simple api for xml)
+			特点：读取一行解析一行
+			优点：
+				对内存消耗小，查询效率高
+			缺点：
+				不能做增删改操作
+				
+		java提供API对解析器进行包装，方便程序员对xml文件进行操作
+		java xercrs
+		dm4j
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

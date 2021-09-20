@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/test" 
+		xmlns:tns="http://www.example.org/test"
+			elementFormDefault="qualified">
+
+	<xs:element name="people">
+		<xs:complexType>
+			<xs:sequence>
+				<!-- teacher student boos -->
+				<xs:element name="teacher">
+					<!-- name(string) age(integer 0-120) salary(decimal) address(string) -->
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" /><!-- name -->
+							<xs:element name="age">
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:minInclusive value="0" />
+										<xs:maxInclusive value="120" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element><!-- age -->
+							<xs:element name="salary" type="xs:decimal" /><!-- salary -->
+							<xs:element name="address" type="xs:string" maxOccurs="unbounded" /><!-- 
+								address -->
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- student -->
+				<xs:element name="student" maxOccurs="unbounded">
+					<!-- name(string) age(integer) numberid(positiveInteger) course(string 
+						max 3) -->
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" /><!-- name -->
+							<xs:element name="age">
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:minInclusive value="0" />
+										<xs:maxInclusive value="120" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element><!-- age -->
+							<xs:element name="numberid" type="xs:positiveInteger" />
+							<xs:element name="course" type="xs:string" maxOccurs="3" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+</xs:schema>
+
+

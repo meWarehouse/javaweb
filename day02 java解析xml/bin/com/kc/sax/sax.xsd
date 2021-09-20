@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/sax" xmlns:tns="http://www.example.org/sax"
+
+	elementFormDefault="qualified">
+	<!-- animal:tiger panada dog (name sex age from feature) -->
+	<xs:element name="animal">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="tiger" type="tns:animalAttr" />
+				<xs:element name="panda" type="tns:animalAttr" />
+				<xs:element name="dog" type="tns:animalAttr" />
+			</xs:sequence>
+			<xs:attribute name="orderid" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="animalSex">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="male" />
+			<xs:enumeration value="femal" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="animalAge">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="70" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="animalFea">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="吃肉" />
+			<xs:enumeration value="卖萌" />
+			<xs:enumeration value="看门" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="animalID">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="001" />
+			<xs:enumeration value="002" />
+			<xs:enumeration value="003" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="animalAttr">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="sex" type="tns:animalSex" />
+			<!-- <xs:simpleType> <xs:restriction base="xs:string"> <xs:enumeration 
+				value="male" /> <xs:enumeration value="female" /> </xs:restriction> </xs:simpleType> 
+				</xs:element> -->
+			<xs:element name="age" type="tns:animalAge" />
+			<!-- <xs:simpleType> <xs:restriction base="xs:positiveInteger"> <xs:minInclusive 
+				value="1" /> <xs:maxInclusive value="70" /> </xs:restriction> </xs:simpleType> 
+				</xs:element> -->
+			<xs:element name="from" type="xs:string" />
+			<xs:element name="feature" type="tns:animalFea" />
+		</xs:sequence>
+		<xs:attribute name="id" type="tns:animalID" />
+	</xs:complexType>
+
+</xs:schema>

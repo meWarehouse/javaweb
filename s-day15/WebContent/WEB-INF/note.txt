@@ -1,0 +1,81 @@
+
+
+在 java 中尽量写绝对路径
+
+	在 javaWEB 中什么是绝对路径：
+		相对于 contextPath (当前 WEB 应用的根路径)的路径，即任何的路径都必须带上 contextPath
+		
+			http://localhost:8080/contextPath(当前 WEB 应用的上下文路径)/a.jsp   -->  http://localhost:8080/s-day12/a.jsp    √
+			
+			http://localhost:8080/testServlet	×
+	
+	java 中的  / 代表什么
+		1.当前 WEB 应用的根路径：http://localhost:8080/contextPath/   : 若  / 需交由 Servlet 容器来处理
+		
+			①：请求转发时：
+				request.getRequestDispatcher("/path/b.jsp").forward(request, response);
+				
+			②：web.xml 文件中映射 Servlet 访问路径：
+				<servlet-mapping>
+					<servlet-name> xxx </servlet-name>
+					<url-pattern> /testServlet </url-pattern>
+				</servlet-mapping>
+				
+			③：各种定制标签中的  /
+		
+		2.WEB 站点的根路径：http://localhost:8080/	：若  / 需交由浏览器处理3
+		
+			①：超链接：<a href="/testServlet"> To B Page</a>
+			
+			②：表单中的 action=""
+			
+			③：请求重定向：response.sendRedirect("")
+			
+	如何编写：
+		若 / 表示的是站点的根目录，在其前面加上 contextPath 就可以
+			<a href="/TestServlet"> To B Page</a> --> <a href="<%= request.getContextPath() %>/testServlet"> To B Page</a>	
+			response.sendRedirect(request.getContextPath()+"/path/c.jsp");	
+			
+			
+表单重复提交
+	
+	1.表单重复提交:
+		①：在表单提交到一个 Servlet，而 Servlet 又通过请求转发的方式响应了一个 JSP(HTML) 页面，此时地址栏还保留着 Servlet 的那个路径，再响应页面点击刷新(重定向不算)
+		②：在响应页面没有到达是重复点击 “提交按钮”
+		③：点击返回，再点击 “提交”
+		
+	2.不是重复提交的情况：
+		点击 “返回” ， “刷新” 原页面，再点击  “提交” 	
+			
+	3.如何避免重复提交		
+		在表单中做一个标记，提交到 Servlet ，检查标记是否存在且是否和预定义的标记一致，若一致，则受理请求，并销毁标记，若不一致或没有标记，则直接响应提示信息:"重复提交"		
+			
+			①：在原表单页面，生成一个随机值 token
+			②：在原表单页面，把 token 值放入 session 属性中
+			③：在原表单页面，把 token 值放入当隐藏域中
+			④：在目标的 Servlet 中：获取 session 和 隐藏域中的 token 值
+			⑤：比较两个值是否一致：若一致，受理请求，且把 session 域中的 token 属性清除
+			⑥：若不一致，则直接响应提示页面	
+			
+使用 HttpSession 实现验证码
+	1.基本原理 和表单重复提交一致			
+			
+		①：在原表单页面，生成一个随机验证码图片，生成图片同时，需要将该图片中的字符串放入session中
+		②：在原表单页面，定义一个文本域，用于输入验证码
+		
+		④：在目标的 Servlet 中：获取 session 和 文本域中的 验证码的 值
+		⑤：比较两个值是否一致：若一致，受理请求，且把 session 域中的 验证码属性清除
+		⑥：若不一致，则直接通过重定向的方式返回原页面 并且提示页验证码错误	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

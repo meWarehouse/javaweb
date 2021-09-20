@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	需求：
+		必须有根节点scores
+		scores的字标签为student 有id属性
+-->
+<!-- 
+	数量词
+		+ 至少一次
+		？0或1
+		* 任意次数
+	
+	声明内部dtd
+	<!DOCTYPE 根元素 [元素声明]>
+	元素：<!ELEMENT 元素名称 类别> 
+	元素属性：<!ATTLIST 元素名称 属性名称 属性类型 默认值>
+			CDATA 字符串数据
+			#REQUIRED 必须的
+			#IMPLIED  非必需的
+	空元素：<!ELEMENT 元素名称 EMPTY>
+	元素类型#PCDATA不能有标签
+	
+	<!DOCTYPE scores[
+		<!ELEMENT scores (student*)>
+		<!ELEMENT student (name,course,score)>
+		<!ELEMENT name (#PCDATA)>
+		<!ELEMENT course (#PCDATA)>
+		<!ELEMENT score (#PCDATA)>
+		<!ATTLIST student id CDATA #REQUIRED>
+	]>
+	
+	引入外部xml约束文件
+	<!DOCTYPE 根元素 SYSTEM "文件名">
+-->
+<!DOCTYPE scores SYSTEM "yuesu.dtd">
+<scores>
+	<student id="1">
+		<name>yige</name>
+		<!--<course><a>dwfwef的</a>23</course> 错误-->
+		<course>sc啊从V多少</course>
+		<score>24<a>单反机</a></score>
+	</student>
+</scores>
+
+
+

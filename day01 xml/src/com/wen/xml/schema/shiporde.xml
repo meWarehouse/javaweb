@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<shiporder orderid="3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="shiporde.xsd">
+	<orderperson>滚粗wigIU</orderperson>
+	<shipto>
+		<name>name</name>
+		<address>address</address>
+		<city>city</city>
+		<country>country</country>
+	</shipto>
+	<item>
+		<title>标题yi</title>
+		<note>一号</note>
+		<quantity>3432</quantity>
+		<price>1.24</price>
+	</item>
+	<item>
+		<title>标题er</title>
+		<quantity>24354</quantity>
+		<price>1.2435</price>
+	</item>
+</shiporder>
+
+
+
+
+
+

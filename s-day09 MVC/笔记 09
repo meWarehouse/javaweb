@@ -1,0 +1,31 @@
+笔记09
+
+
+
+	MVC 案例
+	
+	1.加入C3P0数据源 
+		---C3p0
+		---数据库举动的jar包
+	2.编写DAO,JdbcUtils工具类和CustomerDAO接口
+	3.提供CustomerDAO接口的实现类：CustomerDAOJDBCImpl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

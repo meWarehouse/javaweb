@@ -1,0 +1,188 @@
+笔记06
+
+JSP		Java Sevlet Page
+
+
+	1.JSP是简Servlet编写的一种技术，它将java代码和HTML语句混合在同一文件中编写，只对网页中要动态产生的内容采用java代码编写，而对静态的内容采用普通静态HML页面方式编写
+
+	2.JSP可以放置在WEB应用程序除WEB-INF及子目录外的其他任何目录中，JSP页面的访问路径与普通HTML页面的访问路径形式一致
+
+	3.JSP 运行原理：(本质上就是一个Servlet)
+		3.1:
+			jsp文件生成的代码
+				public final class hello_jsp extends org.apache.jasper.runtime.HttpJspBase
+												implements org.apache.jasper.runtime.JspSourceDependent {
+			HttpJspBase 源码
+				public abstract class HttpJspBase extends HttpServlet implements HttpJspPage {
+		
+			通过对比jsp生成文件代码，与其继承类HttpJspBase源码可知，jsp生成的代码间接继承Servlet
+		
+		3.2:
+			运行：每个jsp页面第一次被访问时，jsp引擎先将其翻译成一个Servlet源程序，接着再将这个servlet源程序编译成servlet的class类文件，然后再由WEB容器(servlet引擎)像调用不同servlet
+				程序一样的方式来装载和解释执行这个由jsp页面翻译成servlet的程序
+
+	4.jsp的9个隐含对象
+		public void _jspService(final javax.servlet.http.HttpServletRequest request, final javax.servlet.http.HttpServletResponse response)
+       		throws java.io.IOException, javax.servlet.ServletException {
+			    final javax.servlet.jsp.PageContext pageContext;
+			    javax.servlet.http.HttpSession session = null;
+			    final javax.servlet.ServletContext application;
+			    final javax.servlet.ServletConfig config;
+			    javax.servlet.jsp.JspWriter out = null;
+			    final java.lang.Object page = this;
+			    
+		配置jsp文件
+			<servlet>
+				<servlet-name>jsp文件注册名</servlet-name>
+				<jsp-file>/jsp文件名</jsp-file>
+			</servlet>
+			<servlet-mapping>
+				<servlet-name>jsp文件注册名</servlet-name>
+				<url-pattern>/自定义路径名</url-pattern>
+			</servlet-mapping>
+			
+		   
+		①.HttpServletRequest request
+		②.HttpServletResponse response（几乎不用）
+		③.PageContext pageContext 页面的上下文，是PageContext的一个对象，可以从该对象中获取到其他8个隐含对象，也可以从中获取到当前页面的其他信息(自定义标签时常用) 
+		④.HttpSession session 代表浏览器的一次会话(从程序开始到结束) HttpSession 的一个对象
+		⑤.ServletContext application 代表当前WEB应用 是ServletContext对象 
+		⑥.ServletConfig config 当前JSP对应的Servlet的ServletConfig对象(开发时几乎不使用)
+		⑦.JspWriter out 对象 调用out.println() 可以直接将字符串打印到浏览器上 
+		⑧.Object page 指向当前JSP对应的Servlet对象的引用 但为Object类型 只能调用Object类的方法(开发中几乎不用)
+		⑨.exception  在一定的条件下才可以使用   只有在声明了  <%@ page isErrorPage="true" %>时才可以使用 
+			
+		常用：pageContext, request, session, application, out
+		几乎不用：response, config, page 
+		
+	5.属性作用范围
+		Object	getAttribute(String name)	获取指定的属性
+		Enumeration<String>	getAttributeNames()	获取所有属性的方法名组成的Enumeration对象
+		void	removeAttribute(String name)	移除指定属性
+		void	setAttribute(String 属性名, Object 属性值)	设置属性
+			
+		pageContext, request, session, application 对象都有这些属性(域对象) 作用范围从大到小
+
+		①.pageContext 属性作用范围仅限于当前页面
+		②.request  属性作用范围仅限同一个请求（每次加载都是一次请求）
+		③.session  属性作用范围仅限同一次会话：浏览器打开直到关闭称为一次会话(前提是在此期间会话不失效)
+		④.application  属性作用范围仅限当前WEB应用  是范围最大的属性作用范围 只要在一处设置属性，其他各处JSP或Servlet中都可以获取
+
+
+	6.请求的转发与重定向：
+		请求转发：
+			调用request的getRequestDispatcher("/"+"需要转发的路径")方法
+			再调用RequestDispatcher的forward(request,response)方法
+		请求重定向：
+			调用response的sendRedirect("需要重定向的路径")
+		
+		区别：
+			1.本质区别：请求的转发只发出了一次请求，而重定向则发出两次请求
+				请求转发：发送一个请求操作的是同一个request
+				请求重定向：发送两次请求 操作的是不同的 request
+			2.具体区别：
+				①.请求的转发：地址栏是初次发出请求的地址
+				      请求重定向：地址栏不再是初次发出的请求地址，而是最后响应的那个地址
+				②.请求的转发：在最终的Servlet中，request 对象和中转的那个 request 是同一个对象
+				      请求重定向：----------------------------------------- 不是同一个对象
+				③.请求的转发：只能转发给当前WEB应用的资源
+				      请求重定向：可以重定向到任何资源
+				④.请求的转发：/ 代表的是当前WEB应用的根目录
+				      请求重定向：/ 代表的是当前WEB站点的根目录 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

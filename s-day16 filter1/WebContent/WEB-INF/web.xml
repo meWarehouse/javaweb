@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>s-day16 filter1</display-name>
+  <servlet>
+    <servlet-name>authorityservlet</servlet-name>
+    <servlet-class>com.kc.demo.AuthorityServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>authorityservlet</servlet-name>
+    <url-pattern>/authorityServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

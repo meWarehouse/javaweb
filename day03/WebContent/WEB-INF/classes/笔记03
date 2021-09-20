@@ -1,0 +1,89 @@
+笔记03
+
+
+ 	B/S是Brower/Server的简写，即浏览器和服务器模式。
+ 		特点：客户端不需要部署应用程序，只要一个浏览器，不需要长时 间保持连接。
+		优点：程序升级维护方便,代码只在WebServer 中有一份。因为最终 程序运行结果在客户浏览器中显示，所以对客户端平台无限制。客 户端零维护,成本低,安全性高。 
+		缺点：响应速度、交互性没有C/S 好，应用服务器的负载过重。
+	C/S是Client/server的简写，即客户端和服务器模式
+		 特点：每个客户端必须安装（部署）一份应用程序，长时间保持连 接。
+		  优点：响应速度快，交互比较好。
+		   缺点：维护升级比较麻烦。 
+		  开发技术：vb,Delphi,winforms,AWT/Swing,SWT
+
+
+	HTTP协议	(用于定义WEB浏览器之间交换数据的过程及数据本身的格式)
+		1.HTTP：Hypertext Transfer Protocol（超文本传输协议）
+		2.浏览器和web 服务器之间通过HTTP 协议在Internet 上进行数据发送 和接收
+		3.HTTP 是一个基于请求/响应模式的、无状态的通讯协议
+		4.只要浏览器发送的请求信息完全一样，web服务器处理的过程也完 全一样
+		5.web服务器总是被动的处理请求。
+		
+
+
+	URL
+		1.URL（Uniform Resource Locator）：统一资源定位符
+		2.Internet网上的每一个Web服务器中的每一个网页文档都应该有一个 访问标记符，用于唯一标识一个网页文档，这个访问标记符称为 URL
+		2.URL中包含了使用的协议，主机名称，端口号，资源路径，文档名 称
+		4.浏览器向web服务器请求某一个页面时，必须在地址栏指定该网页 文件的URL
+
+		http://www.mysql.com:80/downloads/help.html
+		协议://域名:端口号/资源路径
+
+	Web服务器
+		1.Web服务器是可以向发出请求的浏览器提供文档的软件
+		2.服务器是一种被动程序：只有当Internet上的浏览器发出的请求时，服务器 才会响应
+		3.常见的Web服务器：Apache，Nginx，Tomcat（应该叫做servlet引擎，可以 处理jsp和servlet）。
+
+
+
+
+
+
+	配置Tomcat
+		1.将java编译输出文件(.class文件)路径改为	当前项目/WebContent/WEB-INF/classes
+		2.在apache-tomcat-7.0.100\conf目录下创建
+			Catalina\localhost
+				再在localhost文件下创建xml文件，格式如下：
+					<?xml version="1.0" encoding="编码集"?>
+					<Context path="/test2" 
+							docBase="D:\\JavaLearn\\java\\javaEE-workspace\\day03\\WebContent" 
+								 reloadable="true">
+					</Context>
+					
+
+	使用javaEE版Eclipse卡法动态WEB工程
+		1.将版本切换到javaEE 
+		2.在server面板中新建Tomcat服务器	(目录一定要配置到apache-tomcat-7.0.100根目录下)
+		3.新建动态WEB工程（Dynamic Web Project） 
+			注:Target runtime 一定要配置到指定的Apach Tomcat版本
+
+
+
+	Servlet
+		1.java servlet是平台无关的服务器组件，它运行在servlet容器中
+			Servlet容器负责servlet和客户端的通信以及调用servlet的方法
+			servlet和客户端的通信采用请求相应模式
+		2.servlet功能：
+			2.1：创建并返回基于客户端的请求的动态HTML页面
+			2.2：创建可嵌入到现有HTML页面中的部分HTML页面(HTML片段)
+			2.3：与其他服务器资源进行通信
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

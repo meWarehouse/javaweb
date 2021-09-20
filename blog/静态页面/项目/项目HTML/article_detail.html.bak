@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0065)http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>个人博客——博客</title>
+		<meta name="keywords" content="个人博客模板,博客模板,响应式">
+		<meta name="description" content="如影随形主题的个人博客模板，神秘、俏皮。">
+		<link href="./article_detail_files/base.css" rel="stylesheet">
+		<link href="./article_detail_files/style.css" rel="stylesheet">
+		<link href="./article_detail_files/media.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<!--[if lt IE 9]>
+		<script src="../include/js/modernizr.js"></script>
+		<![endif]-->
+	<script src="./article_detail_files/share.js.下载"></script><link rel="stylesheet" href="./article_detail_files/share_style1_32.css"></head>
+<body>
+<div class="ibody">
+  <header>
+    <h1>提拉米苏.甜腻的苦涩</h1>
+    <h2>做好的提拉米苏被遗忘在角落   我的手再也挽留不住你离去的脚步  爱情是甜蜜的苦涩，无奈的别离  苦涩的怕不是味道，而是心绪</h2>
+    <div class="logo"><a href="http://localhost:8080/BlogJSPServlet2/index/index"></a></div>
+	 
+ <nav id="topnav">
+ <a href="http://localhost:8080/BlogJSPServlet2/index/index">首页</a>
+ <a href="http://localhost:8080/BlogJSPServlet2/about/about">关于我</a>
+ <a href="http://localhost:8080/BlogJSPServlet2/article/article" id="topnav_current">慢生活</a>
+ <a href="http://localhost:8080/BlogJSPServlet2/album/album">我的相册</a>
+ <a href="http://localhost:8080/BlogJSPServlet2/critique/critique">留言板</a></nav> 
+   </header>
+  <article>
+    <h2 class="about_h">您现在的位置是：<a href="http://localhost:8080/BlogJSPServlet2/index/index">首页</a>&gt;<a href="http://localhost:8080/BlogJSPServlet2/article/article">慢生活</a>&gt;<a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#">详细内容</a></h2>
+    <div class="index_about">
+      
+      <h2 class="c_titile">鼠标悬停图片、文字css3效果</h2>
+      <p class="box_c"><span class="d_time">发布时间：2017-04-30</span><span>编辑：佚名</span><span>浏览(46)</span><span>评论(0)</span></p>
+      <ul class="infos">
+        <p><span style="color:rgb(102, 102, 102); font-family:宋体,arial,helvetica,sans-serif; font-size:14px">&nbsp; &nbsp; 其实这样的效果也很常见，但是我平时用到很少，在其他网站看到这样的效果，第一反应就是查看源代码，看他怎么运用的，结果用了很多的div，最主要的是用js来实现。目前很多浏览器也都兼容css3新属性，这个例子就可以使用rgba(0,0,0,0.5)、opacity、当然关键也要看怎么定位，还是会用到position属性。</span></p>
+
+<p><span style="color:rgb(102, 102, 102); font-family:宋体,arial,helvetica,sans-serif; font-size:14px">&nbsp;&nbsp;&nbsp;</span></p>
+
+<p>Html：</p>
+
+<div class="shili" style="margin: 0px; padding: 10px; background-color: rgb(245, 245, 245); border: 1px dotted rgb(119, 136, 85); word-wrap: break-word;">
+<p>&nbsp;&lt;div&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;h2&gt;1、鼠标悬停图片变大文字消失&lt;/h2&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;ul class="ex01"&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/" &gt;&lt;img src="images/1.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/" &gt;&lt;img src="images/2.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/"&gt;&lt;img src="images/3.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/" &gt;&lt;img src="images/4.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;/ul&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp;&lt;h2&gt;2、鼠标悬停文字出现&lt;/h2&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;ul class="ex02"&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/" &gt;&lt;img src="images/1.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/"&gt;&lt;img src="images/2.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/"&gt;&lt;img src="images/3.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="/"&gt;&lt;img src="images/4.jpg"&gt;&lt;span&gt;鼠标悬停&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</p>
+
+<p>&nbsp; &nbsp; &lt;/ul&gt;</p>
+
+<p>&nbsp; &lt;/div&gt;</p>
+</div>
+
+<p>CSS代码片段：</p>
+
+<div class="shili" style="margin: 0px; padding: 10px; background-color: rgb(245, 245, 245); border: 1px dotted rgb(119, 136, 85); word-wrap: break-word;">
+<p>/* ex01 */</p>
+
+<p>.ex01 li{ width:170px; float:left; margin:5px}</p>
+
+<p>.ex01 li a { position:relative; display:block }</p>
+
+<p>.ex01 li span{ position: absolute; left: 0px; bottom: 0px;color:#FFF; line-height:24px; display:block; width:170px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; -ms-transition: all 0.5s; background:rgba(0,0,0,0.5); text-align:center}</p>
+
+<p>.ex01 img { width: 170px; height: 120px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; display:block}</p>
+
+<p>.ex01 img:hover { -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -o-transform: scale(1.1); -ms-transform: scale(1.1); }</p>
+
+<p>.ex01 li:hover span{ opacity:0}</p>
+
+<p>/* ex02 */</p>
+
+<p>.ex02 li{width:170px;margin:5px;float:left;}</p>
+
+<p>.ex02 li img{width: 170px; height: 120px;display:block;}</p>
+
+<p>.ex02 li span{ opacity:0}</p>
+
+<p>.ex02 li:hover span{ opacity:1}</p>
+
+<p>.ex02 li a { position:relative; display:block }</p>
+
+<p>.ex02 li span{ position: absolute; left: 0px; top: 0px; background:rgba(0,0,0,0.5); color:#FFF; line-height:24px; display:block; width:170px;text-align:center;-webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; -ms-transition: all 0.5s; }</p>
+</div>
+
+<ul>
+</ul>
+
+      </ul>
+      <div class="keybq">
+        <p><span>关键字词</span>：心得笔记</p>
+      </div>
+      <div class="nextinfo">
+              
+		      
+		      
+		        		 <p>下一篇：<a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=3">从摄影作品中获取网页颜色搭配技巧</a></p>
+		      
+      </div>
+    </div>
+  </article>
+  <aside>
+    <div class="rnav">
+      <li class="rnav1 "><a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#">日记</a></li>
+      <li class="rnav2 "><a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#">欣赏</a></li>
+      <li class="rnav3 "><a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#">程序人生</a></li>
+      <li class="rnav4 "><a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#">经典语录</a></li>
+    </div>
+    <div class="ph_news">
+      <h2>
+        <p>点击排行</p>
+      </h2>
+      <ul class="ph_n">
+       
+       1
+			       
+			      		<li><span class="num1">
+			      		      1
+			      		   </span>
+			      		   <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2">
+			      		     鼠标悬停图片、文字css3效果
+			      		   </a>
+			      		</li>
+			      	
+			      	
+       
+       2
+			       
+			      		<li><span class="num1">
+			      		      2
+			      		   </span>
+			      		   <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=3">
+			      		     从摄影作品中获取网页颜色搭配技巧
+			      		   </a>
+			      		</li>
+			      	
+			      	
+       
+       3
+			       
+			      		<li><span class="num1">
+			      		      3
+			      		   </span>
+			      		   <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=7">
+			      		     CSS3动画_liffect effect
+			      		   </a>
+			      		</li>
+			      	
+			      	
+       
+       4
+			       
+			      	
+			      		 <li>
+			      		   <span>
+			      		       4
+			      		   </span>
+			      		   <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=4">
+			      		        HTML5技术将推动移动浏览器变革
+			      		   </a>
+			      	    </li>
+			      	
+       
+       5
+			       
+			      	
+			      		 <li>
+			      		   <span>
+			      		       5
+			      		   </span>
+			      		   <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=5">
+			      		        css3制作3D图书翻页效果
+			      		   </a>
+			      	    </li>
+			      	
+       
+       6
+			       
+			      	
+			      		 <li>
+			      		   <span>
+			      		       6
+			      		   </span>
+			      		   <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=6">
+			      		        使用css3伪元素制作时间轴并且实现鼠标选中高亮效果
+			      		   </a>
+			      	    </li>
+			      	
+       
+      </ul>
+      <h2>
+        <p>栏目推荐</p>
+      </h2>
+      <ul>
+           
+        <li><a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2">鼠标悬停图片、文字css3效果</a></li>
+          
+        <li><a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=3">从摄影作品中获取网页颜色搭配技巧</a></li>
+          
+        <li><a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=7">CSS3动画_liffect effect</a></li>
+          
+      </ul>
+      <h2>
+        <p>最新评论</p>
+      </h2>
+      <ul class="pl_n">
+          
+        <dl>
+          <dt><img src="./article_detail_files/s8.jpg"> </dt>
+          <dt> </dt>
+          <dd>周三
+            <time>2018-05-30</time>
+          </dd>
+          <dd>
+              <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#"> 
+                  今天真热！
+                  <!--   <s:property value="content" escape="false"/>  -->
+              </a>
+         </dd>
+        </dl>
+        
+        <dl>
+          <dt><img src="./article_detail_files/s8.jpg"> </dt>
+          <dt> </dt>
+          <dd>Jim
+            <time>2018-2-26</time>
+          </dd>
+          <dd>
+              <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#"> 
+                  这个博客不错不错,我很喜欢
+                  <!--   <s:property value="content" escape="false"/>  -->
+              </a>
+         </dd>
+        </dl>
+        
+        <dl>
+          <dt><img src="./article_detail_files/s8.jpg"> </dt>
+          <dt> </dt>
+          <dd>Jim
+            <time>2018-2-26</time>
+          </dd>
+          <dd>
+              <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#"> 
+                  这个博客不错不错,我很喜欢
+                  <!--   <s:property value="content" escape="false"/>  -->
+              </a>
+         </dd>
+        </dl>
+        
+        <dl>
+          <dt><img src="./article_detail_files/s8.jpg"> </dt>
+          <dt> </dt>
+          <dd>Jim
+            <time>2018-2-26</time>
+          </dd>
+          <dd>
+              <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#"> 
+                  这个博客不错不错,我很喜欢
+                  <!--   <s:property value="content" escape="false"/>  -->
+              </a>
+         </dd>
+        </dl>
+        
+        <dl>
+          <dt><img src="./article_detail_files/s8.jpg"> </dt>
+          <dt> </dt>
+          <dd>Jim
+            <time>2018-2-26</time>
+          </dd>
+          <dd>
+              <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#"> 
+                  这个博客不错不错,我很喜欢
+                  <!--   <s:property value="content" escape="false"/>  -->
+              </a>
+         </dd>
+        </dl>
+        
+      </ul>
+    </div>
+   
+  <div class="copyright">
+      <ul>
+        <p> Design by <a href="http://localhost:8080/BlogJSPServlet2/article/article_detail?id=2#">jim</a></p>
+        <p></p>
+        <p></p>
+      </ul>
+    </div> 
+  </aside>
+  <script src="./article_detail_files/silder.js.下载"></script>
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+
+
+</body></html>

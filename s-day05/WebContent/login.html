@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		需求：
+			在web.xml文件中设两个WEB应用参数，user，password
+			定义一个login.html，里面定义连个请求字段：user，password，发送到loginServlet
+			再创建一个LoginServlet,在其中获取请求的user，password，对比和web.xml文件中定义的请求参数是否一致
+			若一致，响应Hello:xxx,若不响应Sorry:xxx  xxx为user
+	 -->
+
+	<form action="loginServlet" method="post">
+		user:<input type="text" name="user" />
+		password:<input type="password" name="password" />
+		<input type="submit" value="Submit" />
+	
+	</form>
+
+
+
+
+</body>
+</html>

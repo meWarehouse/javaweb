@@ -1,0 +1,101 @@
+笔记05
+
+	GET 请求和 POST 请求
+		1.GET方式传递参数
+			①：在浏览器地址栏中输入某个URL地址或单击网页上的一个超链接时，浏览器发出HTTP请求消息方式为GET
+			②：如果某个form表单元素的method属性设置为GET，则浏览器提交FORM表单为GET
+			③：使用GET请求方式给WEB服务器传递参数格式(使用GET方式传送数据量一般限制在1K以下)
+				http://域名/xxx?属性1=属性值1&属性2=属性值2...
+		
+		2.POST方式传递参数
+			①：POST 请求方式主要用于向WEB服务器端程序提交FORM表单的数据(form表单的method设置为POST)
+			②：POST 方式将各个表单字段元素及其数据作为HTTP消息的实体内容发送给WEB 服务器，传递的数据量要比使用GET方式传送的数据量大的多
+
+	Servlet 的 service()方法用于应答请求：因为每次请求都会调用service()方法
+		service()方法 public void service(ServletRequest, ServletResponse)
+			ServletRequest：封装了请求信息，可以从中获取任何的请求信息(请求参数，请求方式...)
+			ServletResponse：封装了相应信息，如果想给用户什么响应，可以使用该接口具体的方法
+			这两个接口的实现类都是服务器给予实现的，并在服务器调用service方法时传入
+		
+			ServletRequest
+				.getParameter(String name)
+					根据参数返回请求值，当请求参数有多个时只会返回定义个
+				.getParameterValues(String name)
+					根据参数返回请求参数对应的字符串数组(String[])
+				.getParameterNames()
+					返回请求的所有参数名对应的Enumeration<String>对象
+				.getParameterMap()
+					返回请求参数的Map<String,String[]>键值对
+					
+				HttpServletRequest httpServletRequest = (HttpServletRequest)request;
+					HttpServletRequest.getRequestURI()
+						获取请求form参数的String类型URI
+					HttpServletRequest.getRequestURL()
+						获取请求form参数的BufferString类型URL
+						(URL:http://localhost:8080/day04/rewriteServlet--->URI:/day04/rewriteServlet )
+					HttpServletRequest.getMethod()
+						获取请求form的提交方式(GET/POST)
+					HttpServletRequest.getQueryString()
+						获取GET请求的传递的参数
+					HttpServletRequest.getServletPath()
+						返回此请求的URL中调用servlet的部分(Servlet的映射路径)
+					ServletResponse.setContentType(String arg0)
+						设置相应类型(word、xml、xsl等类型)
+		Servlet框架
+			Servlet <-- (ServletConfig <--)GenericServlet <-- HttpServlet
+			
+			1.GenericServlet实现Servlet接口，及ServletConfig接口
+					注意：
+						需要在GenericServlet中自定义一个无参数init方法，并在init(ServletRequest,ServletResponse)中调用无参的init方法
+							目的：
+								供子类调用无参init方法，达到初始化Servlet的目的
+			2.
+			
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

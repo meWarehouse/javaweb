@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ss_progect2</display-name>
+	
+	<context-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+	
+	<filter>
+		<filter-name>characterFilter</filter-name>
+		<filter-class>com.kc.progect.filter.MyCharacterFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>userregisterservlet</servlet-name>
+		<servlet-class>com.kc.progect.servlet.UserRegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userregisterservlet</servlet-name>
+		<url-pattern>/userRegisterServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+</web-app>

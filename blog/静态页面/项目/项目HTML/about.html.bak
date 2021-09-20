@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)http://localhost:8080/BlogJSPServlet2/about/about -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>个人博客——关于我</title>
+		<meta name="keywords" content="个人博客模板,博客模板,响应式">
+		<meta name="description" content="如影随形主题的个人博客模板，神秘、俏皮。">
+		<link href="./about_files/base.css" rel="stylesheet">
+		<link href="./about_files/about.css" rel="stylesheet">
+		<link href="./about_files/media.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<!--[if lt IE 9]>
+		<script src="../include/js/modernizr.js"></script>
+		<![endif]-->
+	   <script src="./about_files/share.js.下载"></script><link rel="stylesheet" href="./about_files/share_style1_32.css">
+	</head>
+<body>
+<div class="ibody">
+  <header>
+    <h1>提拉米苏.甜腻的苦涩</h1>
+    <h2>做好的提拉米苏被遗忘在角落 我的手再也挽留不住你离去的脚步 爱情是甜蜜的苦涩,无奈的别离 苦涩的怕不是味道,而是心绪</h2>
+    <div class="logo"><a href="http://localhost:8080/BlogJSPServlet2/index/index"></a></div>
+  
+  <nav id="topnav">
+		 <a href="index.html">首页</a>
+		 <a href="about.html"  id="topnav_current">关于我</a>
+		 <a href="article.html">慢生活</a>
+		 <a href="album.html">我的相册</a>
+		 <a href="critique.html">留言板</a>
+ </nav>
+   </header>
+  <article>
+    <h3 class="about_h">您现在的位置是：<a href="http://localhost:8080/BlogJSPServlet2/index/index">首页</a><a href="http://localhost:8080/BlogJSPServlet2/about/about">关于我</a></h3>
+    <div class="about">
+      <h2>Just about me</h2>
+      <ul>
+        
+                     <p>请不要假装对我好，我很傻，会当真的。<br>
+谁把谁真的当真，谁为谁心疼。<br>
+爱那么短，遗忘那么长。<br>
+我还在原地等你，你却已经忘记曾来过这里。<br>
+谁的寂寞覆我华裳，谁的华裳覆我肩膀。<br>
+经不住似水流年，逃不过此间少年。<br>
+原来地久天长，只是误会一场。<br>
+幸福，就是找一个温暖的人过一辈子。<br>
+痛过之后就不会觉得痛了，有的只会是一颗冷漠的心。<br>
+没有什么过不去，只是再也回不去。要有多坚强，才敢念念不忘。你是我猜不到的不知所措，我是你想不到的无关痛痒。<br>
+感情的戏，我没演技。<br>
+一个人，一座城，一生心疼。看着别人的故事，流着自己的眼泪。<br>
+我喜欢现在的自己，我怀念过去的我们。离开后，别说祝我幸福，你有什么资格祝我幸福？向来缘浅，奈何情深。<br>
+彼年豆蔻，谁许谁地老天荒。我不在乎你对我的不在乎。我相信这个世界永远那么美。<br>
+习惯难受，习惯思念，习惯等你，可是却一直没有习惯看不到你。<br>
+如花美眷，似水流年。回得了过去，回不了当初。那些最终会让你陷进去的，一开始总是美好。<br>
+当你做对的时候，没有人会记得；当你做错的时候，连呼吸都是错。<br>
+等待，是一生最初的苍老。有些事一转身就一辈子。<br>
+年轻时我们放弃，以为那只是一段感情，后来才知道，那其实是一生。<br>
+哀莫过于心不死。<br>
+我很好，不吵不闹不炫耀，不要委屈不要嘲笑，也不需要别人知道。<br>
+我是你转身就忘的路人甲，凭什么陪你蹉跎年华到天涯？</p>
+
+        
+       </ul>
+      <h2>About my blog</h2>
+      <ul class="blog_a">
+        <p>域  名：www.jim.tk
+        </p><p>服务器：京东云
+        </p><p>程  序：原创程序</p>
+        <p>微信公众号:Jim</p>
+      </ul>
+    </div>
+  </article>
+  <aside>
+   
+    <div class="avatar"><a href="http://localhost:8080/BlogJSPServlet2/about/about#"><span>关于Jim</span></a></div>
+    <div class="topspaceinfo">
+      <h1>执子之手，与子偕老</h1>
+      <p>于千万人之中，我遇见了我所遇见的人....</p>
+    </div>
+    <div class="about_c">
+      <p>网名：jim</p>
+      <p>职业：Java程序员</p>
+      <p>籍贯：江西-鹰潭</p>
+      <p>QQ：3535305171</p>
+      <p>邮箱：3535305171@qq.com</p>
+    </div>
+     <div class="bdsharebuttonbox bdshare-button-style1-32" data-bd-bind="1527750586617"><a href="http://localhost:8080/BlogJSPServlet2/about/about#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="http://localhost:8080/BlogJSPServlet2/about/about#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="http://localhost:8080/BlogJSPServlet2/about/about#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="http://localhost:8080/BlogJSPServlet2/about/about#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="http://localhost:8080/BlogJSPServlet2/about/about#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="http://localhost:8080/BlogJSPServlet2/about/about#" class="bds_more" data-cmd="more"></a></div>
+    
+
+  </aside>
+  <script src="./about_files/silder.js.下载"></script>
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+
+
+</body></html>
